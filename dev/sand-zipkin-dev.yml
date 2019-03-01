@@ -23,7 +23,7 @@ logging:
 
 spring:
   application:
-    name: sand-zipkin
+    name: ratel-zipkin
   sleuth:
     enabled: false # 表示当前程序不使用sleuth
   # rabbitmq:

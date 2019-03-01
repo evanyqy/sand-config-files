@@ -2,7 +2,7 @@
 
 spring:
   application:
-    name: sand-zuul
+    name: ratel-zuul
   http:
     multipart:
       max-file-size: 80Mb
@@ -25,7 +25,7 @@ spring:
 #   file: /usr/local/etc/www.sandinfo.com.jks
 
  #https端口号.  
-server.port: 443  
+server.port: 10020  
     #证书的路径.  
 # server.ssl.key-store: classpath:www.sandinfo.com.jks  
     #证书密码，请修改为您自己证书的密码.  
@@ -83,12 +83,9 @@ test.secret: '{cipher}AQB92GOGFnLlOOjkUzXIh+3y52FVhbfWRgnAlnrgb4DoisMZ4PgF5mmyGO
 zuul.ignored-services: '*'
 zuul:
   routes:
-    sand-shop-route:
-      service-id: sand-shop
-      path: /s10/**
-    sand-system-route:
-      service-id: sand-system
-      path: /s20/**
-    sand-wxsapp-mall-route:
-      service-id: sand-wxsapp-mall
-      path: /api/**
+    ratel-mall-route:
+      service-id: ratel-mall
+      path: /rm/**
+    ratel-organ-route:
+      service-id: ratel-organ
+      path: /ro/**

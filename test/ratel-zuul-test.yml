@@ -2,13 +2,13 @@
 
 spring:
   application:
-    name: sand-zuul
+    name: ratel-zuul
   http:
     multipart:
       max-file-size: 80Mb
       max-request-size: 80Mb
   zipkin:
-    base-url: http://118.25.129.188:10030
+    base-url: http://172.21.0.16:10030
 
 
 # server:
@@ -25,16 +25,15 @@ spring:
 #   file: /usr/local/etc/www.sandinfo.com.jks
 
  #https端口号.  
-server.port: 443  
+server.port: 10020  
     #证书的路径.  
-server.ssl.key-store: classpath:www.sandinfo.com.jks  
+server.ssl.key-store: classpath:api.zhengjl.com.jks  
     #证书密码，请修改为您自己证书的密码.  
-server.ssl.key-store-password: sandinfo  
+server.ssl.key-store-password: zhengjl  
 #     #秘钥库类型  
-# server.ssl.keyStoreType: JKS  
+#server.ssl.keyStoreType: JKS  
 #     #证书别名  
-# server.ssl.keyAlias: tomcat 
-
+#server.ssl.keyAlias: tomcat 
 
 spring.servlet.multipart.maxHttpHeaderSize: 8192
 
@@ -43,7 +42,7 @@ logging.config: classpath:log/logback-dev.xml
 # 上传文件零时目录
 server.tomcat.basedir: ./springboot-tomcat-tmp
 
-eureka.client.service-url.defaultZone: http://admin:123456@118.25.129.188:10001/eureka/
+eureka.client.service-url.defaultZone: http://admin:123456@39.96.198.137:10001/eureka/
 eureka.instance.instance-id: ${spring.cloud.client.ipAddress}:${server.port}
 eureka.instance.prefer-ip-address: true
 
@@ -81,14 +80,7 @@ test.secret: '{cipher}AQB92GOGFnLlOOjkUzXIh+3y52FVhbfWRgnAlnrgb4DoisMZ4PgF5mmyGO
 
 
 zuul.ignored-services: '*'
-zuul:
-  routes:
-    sand-shop-route:
-      service-id: sand-shop
-      path: /s10/**
-    sand-system-route:
-      service-id: sand-system
-      path: /s20/**
-    sand-wxsapp-mall-route:
-      service-id: sand-wxsapp-mall
-      path: /api/**
+zuul.routes.ratel-mall-route.path: /rm/**
+zuul.routes.ratel-mall-route.url: http://58.87.100.236:8095/
+zuul.routes.ratel-organ-route.path: /ro/**
+zuul.routes.ratel-organ-route.url: http://58.87.100.236:8091/
