@@ -2,7 +2,7 @@
 
 spring:
   application:
-    name: ratel-zuul
+    name: sand-zuul
   http:
     multipart:
       max-file-size: 80Mb
@@ -42,7 +42,7 @@ logging.config: classpath:log/logback-dev.xml
 # 上传文件零时目录
 server.tomcat.basedir: ./springboot-tomcat-tmp
 
-eureka.client.service-url.defaultZone: http://admin:123456@39.96.198.137:10001/eureka/
+eureka.client.service-url.defaultZone: http://sand:cmF0ZWw=@10.18.4.52:10001/eureka/
 eureka.instance.instance-id: ${spring.cloud.client.ipAddress}:${server.port}
 eureka.instance.prefer-ip-address: true
 
@@ -80,7 +80,9 @@ test.secret: '{cipher}AQB92GOGFnLlOOjkUzXIh+3y52FVhbfWRgnAlnrgb4DoisMZ4PgF5mmyGO
 
 
 zuul.ignored-services: '*'
-zuul.routes.ratel-mall-route.path: /rm/**
-zuul.routes.ratel-mall-route.url: http://58.87.100.236:8095/
-zuul.routes.ratel-organ-route.path: /ro/**
-zuul.routes.ratel-organ-route.url: http://58.87.100.236:8091/
+zuul.routes.sand-mall-route.path: /rm/**
+zuul.routes.sand-mall-route.url: http://10.18.4.52:8300/
+zuul.routes.sand-organ-route.path: /ro/**
+zuul.routes.sand-organ-route.url: http://10.18.4.52:8200/
+zuul.routes.sand-hexing-route.path: /hexing/**
+zuul.routes.sand-hexing-route.url: http://10.18.4.52:8100/
