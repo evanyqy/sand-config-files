@@ -42,7 +42,7 @@ logging.config: classpath:log/logback-dev.xml
 # 上传文件零时目录
 server.tomcat.basedir: ./springboot-tomcat-tmp
 
-eureka.client.serviceUrl.defaultZone=http://sand:cmF0ZWw=@172.17.0.2:10001/eureka/
+eureka.client.serviceUrl.defaultZone: http://sand:cmF0ZWw=@172.17.0.2:10001/eureka/
 eureka.instance.instance-id: ${spring.cloud.client.ipAddress}:${server.port}
 eureka.instance.prefer-ip-address: true
 
