@@ -81,8 +81,8 @@ test.secret: '{cipher}AQB92GOGFnLlOOjkUzXIh+3y52FVhbfWRgnAlnrgb4DoisMZ4PgF5mmyGO
 
 zuul.ignored-services: '*'
 zuul.routes.sand-mall-route.path: /rm/**
-zuul.routes.sand-mall-route.url: http://10.18.4.52:8300/
+zuul.routes.sand-mall-route.url: http://172.17.0.7:8300/
 zuul.routes.sand-organ-route.path: /ro/**
-zuul.routes.sand-organ-route.url: http://10.18.4.52:8200/
+zuul.routes.sand-organ-route.url: http://172.17.0.8:8200/
 zuul.routes.sand-hexing-route.path: /rh/**
-zuul.routes.sand-hexing-route.url: http://10.18.4.52:8100/
+zuul.routes.sand-hexing-route.url: http://172.17.0.9:8100/
