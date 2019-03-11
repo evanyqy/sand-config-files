@@ -27,9 +27,9 @@ spring:
  #https端口号.  
 server.port: 10020  
     #证书的路径.  
-server.ssl.key-store: classpath:api.zhengjl.com.jks  
+#server.ssl.key-store: classpath:api.zhengjl.com.jks  
     #证书密码，请修改为您自己证书的密码.  
-server.ssl.key-store-password: zhengjl  
+#server.ssl.key-store-password: zhengjl  
 #     #秘钥库类型  
 #server.ssl.keyStoreType: JKS  
 #     #证书别名  
@@ -42,7 +42,7 @@ logging.config: classpath:log/logback-dev.xml
 # 上传文件零时目录
 server.tomcat.basedir: ./springboot-tomcat-tmp
 
-eureka.client.service-url.defaultZone: http://sand:cmF0ZWw=@10.18.4.52:10001/eureka/
+eureka.client.serviceUrl.defaultZone=http://sand:cmF0ZWw=@172.17.0.2:10001/eureka/
 eureka.instance.instance-id: ${spring.cloud.client.ipAddress}:${server.port}
 eureka.instance.prefer-ip-address: true
 
@@ -84,5 +84,5 @@ zuul.routes.sand-mall-route.path: /rm/**
 zuul.routes.sand-mall-route.url: http://10.18.4.52:8300/
 zuul.routes.sand-organ-route.path: /ro/**
 zuul.routes.sand-organ-route.url: http://10.18.4.52:8200/
-zuul.routes.sand-hexing-route.path: /hexing/**
+zuul.routes.sand-hexing-route.path: /rh/**
 zuul.routes.sand-hexing-route.url: http://10.18.4.52:8100/
