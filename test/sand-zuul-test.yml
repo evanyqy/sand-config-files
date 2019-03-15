@@ -86,5 +86,5 @@ zuul.routes.sand-organ-route.path: /ro/**
 zuul.routes.sand-organ-route.url: http://172.17.0.8:8200/
 zuul.routes.sand-hexing-route.path: /rh/**
 zuul.routes.sand-hexing-route.url: http://172.17.0.9:8100/
-zuul.routes.sand-hexing-route.path: /rb/**
-zuul.routes.sand-hexing-route.url: http://10.18.4.53:8400/
+zuul.routes.sand-basics-route.path: /rb/**
+zuul.routes.sand-basics-route.url: http://10.18.4.53:8400/
