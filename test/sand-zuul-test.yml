@@ -90,3 +90,5 @@ zuul.routes.sand-basics-route.path: /rb/**
 zuul.routes.sand-basics-route.url: http://10.18.4.53:8400/
 zuul.routes.sand-analysis-route.path: /bi/**
 zuul.routes.sand-analysis-route.url: http://10.18.4.53:8500/
+zuul.routes.sand-message-route.path: /sm/**
+zuul.routes.sand-message-route.url: http://10.18.4.53:8600/
