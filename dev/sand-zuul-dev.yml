@@ -2,7 +2,7 @@
 
 spring:
   application:
-    name: ratel-zuul
+    name: sand-zuul
   http:
     multipart:
       max-file-size: 80Mb
@@ -11,30 +11,29 @@ spring:
     base-url: http://127.0.0.1:10030
 
 
-# server:
-#   port: 10020
+  # server:
+  #   port: 10020
 
-# https:
-#   port: 8443 
-#   ssl:
-#     key-store: www.sandinfo.com.jks
-#     key-password: sandinfo
-#     key-store-password: changeit
-#     clientAuth: false
-#     sslProtocol: TLS
-#   file: /usr/local/etc/www.sandinfo.com.jks
+  # https:
+  #   port: 8443
+  #   ssl:
+  #     key-store: www.sandinfo.com.jks
+  #     key-password: sandinfo
+  #     key-store-password: changeit
+  #     clientAuth: false
+  #     sslProtocol: TLS
+  #   file: /usr/local/etc/www.sandinfo.com.jks
 
- #https端口号.  
-server.port: 10020  
-    #证书的路径.  
-# server.ssl.key-store: classpath:www.sandinfo.com.jks  
-    #证书密码，请修改为您自己证书的密码.  
-# server.ssl.key-store-password: sandinfo  
-#     #秘钥库类型  
-# server.ssl.keyStoreType: JKS  
-#     #证书别名  
-# server.ssl.keyAlias: tomcat 
-
+  #https端口号.
+server.port: 10020
+  #证书的路径.
+  #server.ssl.key-store: classpath:api.zhengjl.com.jks
+#证书密码，请修改为您自己证书的密码.
+#server.ssl.key-store-password: zhengjl
+#     #秘钥库类型
+#server.ssl.keyStoreType: JKS
+#     #证书别名
+#server.ssl.keyAlias: tomcat
 
 spring.servlet.multipart.maxHttpHeaderSize: 8192
 
@@ -43,7 +42,7 @@ logging.config: classpath:log/logback-dev.xml
 # 上传文件零时目录
 server.tomcat.basedir: ./springboot-tomcat-tmp
 
-eureka.client.service-url.defaultZone: http://admin:123456@127.0.0.1:10001/eureka/
+eureka.client.serviceUrl.defaultZone: http://sand:cmF0ZWw=@172.17.0.2:10001/eureka/
 eureka.instance.instance-id: ${spring.cloud.client.ipAddress}:${server.port}
 eureka.instance.prefer-ip-address: true
 
@@ -81,11 +80,15 @@ test.secret: '{cipher}AQB92GOGFnLlOOjkUzXIh+3y52FVhbfWRgnAlnrgb4DoisMZ4PgF5mmyGO
 
 
 zuul.ignored-services: '*'
-zuul:
-  routes:
-    ratel-mall-route:
-      service-id: ratel-mall
-      path: /rm/**
-    ratel-organ-route:
-      service-id: ratel-organ
-      path: /ro/**
+zuul.routes.sand-mall-route.path: /rm/**
+zuul.routes.sand-mall-route.url: http://172.17.0.7:8300/
+zuul.routes.sand-organ-route.path: /ro/**
+zuul.routes.sand-organ-route.url: http://172.17.0.8:8200/
+zuul.routes.sand-hexing-route.path: /rh/**
+zuul.routes.sand-hexing-route.url: http://172.17.0.9:8100/
+zuul.routes.sand-basics-route.path: /rb/**
+zuul.routes.sand-basics-route.url: http://10.18.4.53:8400/
+zuul.routes.sand-analysis-route.path: /bi/**
+zuul.routes.sand-analysis-route.url: http://10.18.4.53:8500/
+zuul.routes.sand-message-route.path: /sm/**
+zuul.routes.sand-message-route.url: http://10.18.4.53:8600/
