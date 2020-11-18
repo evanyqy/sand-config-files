@@ -42,7 +42,7 @@ logging.config: classpath:log/logback-dev.xml
 # 上传文件零时目录
 server.tomcat.basedir: ./springboot-tomcat-tmp
 
-eureka.client.serviceUrl.defaultZone: http://sand:cmF0ZWw=@172.17.0.2:10001/eureka/
+eureka.client.serviceUrl.defaultZone: http://sand:cmF0ZWw=@127.0.0.1:10001/eureka/
 eureka.instance.instance-id: ${spring.cloud.client.ipAddress}:${server.port}
 eureka.instance.prefer-ip-address: true
 
@@ -81,14 +81,14 @@ test.secret: '{cipher}AQB92GOGFnLlOOjkUzXIh+3y52FVhbfWRgnAlnrgb4DoisMZ4PgF5mmyGO
 
 zuul.ignored-services: '*'
 zuul.routes.sand-mall-route.path: /rm/**
-zuul.routes.sand-mall-route.url: http://172.17.0.7:8300/
+zuul.routes.sand-mall-route.url: http://127.0.0.1:8300/
 zuul.routes.sand-organ-route.path: /ro/**
-zuul.routes.sand-organ-route.url: http://172.17.0.8:8200/
+zuul.routes.sand-organ-route.url: http://127.0.0.1:8200/
 zuul.routes.sand-hexing-route.path: /rh/**
-zuul.routes.sand-hexing-route.url: http://172.17.0.9:8100/
+zuul.routes.sand-hexing-route.url: http://127.0.0.1:8100/
 zuul.routes.sand-basics-route.path: /rb/**
-zuul.routes.sand-basics-route.url: http://10.18.4.53:8400/
+zuul.routes.sand-basics-route.url: http://127.0.0.1:8400/
 zuul.routes.sand-analysis-route.path: /bi/**
-zuul.routes.sand-analysis-route.url: http://10.18.4.53:8500/
+zuul.routes.sand-analysis-route.url: http://127.0.0.1:8500/
 zuul.routes.sand-message-route.path: /sm/**
-zuul.routes.sand-message-route.url: http://10.18.4.53:8600/
+zuul.routes.sand-message-route.url: http://127.0.0.1:8600/
