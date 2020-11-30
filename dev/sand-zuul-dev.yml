@@ -85,7 +85,7 @@ zuul.routes.sand-mall-route.url: http://127.0.0.1:8300/
 zuul.routes.sand-organ-route.path: /ro/**
 zuul.routes.sand-organ-route.url: http://127.0.0.1:8200/
 zuul.routes.sand-hexing-route.path: /rh/**
-zuul.routes.sand-hexing-route.url: http://127.0.0.1:8100/
+zuul.routes.sand-hexing-route.url: http://127.0.0.1:8110/
 zuul.routes.sand-basics-route.path: /rb/**
 zuul.routes.sand-basics-route.url: http://127.0.0.1:8400/
 zuul.routes.sand-analysis-route.path: /bi/**
